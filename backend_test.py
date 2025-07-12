@@ -232,14 +232,14 @@ class MK7BackendTester:
                 data = response.json()
                 if isinstance(data, list) and len(data) > 0:
                     self.log_test("Admin Users List", True, f"Retrieved {len(data)} users")
-                    return True
+                    return data  # Return the users data for further testing
                 else:
                     self.log_test("Admin Users List", False, "No users found or invalid format", data)
             else:
                 self.log_test("Admin Users List", False, f"HTTP {response.status_code}", response.text)
         except Exception as e:
             self.log_test("Admin Users List", False, "Admin users list failed", str(e))
-        return False
+        return None
     
     def test_admin_user_upgrade(self, admin_token, user_id, new_plan):
         """Test upgrading user plan"""
