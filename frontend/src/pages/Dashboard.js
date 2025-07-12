@@ -4,8 +4,8 @@ import {
   ChartBarIcon, 
   CpuChipIcon, 
   CurrencyDollarIcon,
-  TrendingUpIcon,
-  TrendingDownIcon,
+  ArrowTrendingUpIcon,
+  ArrowTrendingDownIcon,
   UserGroupIcon,
   ClockIcon
 } from '@heroicons/react/24/outline';
