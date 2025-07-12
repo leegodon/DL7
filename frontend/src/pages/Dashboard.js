@@ -181,7 +181,7 @@ const Dashboard = () => {
                         activity.type === 'analysis' ? 'text-blue-600' : 'text-green-600'
                       }`} />
                     ) : (
-                      <TrendingUpIcon className="h-4 w-4 text-green-600" />
+                      <ArrowTrendingUpIcon className="h-4 w-4 text-green-600" />
                     )}
                   </div>
                   <div className="flex-1">
