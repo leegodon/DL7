@@ -245,8 +245,9 @@ class MK7BackendTester:
         """Test upgrading user plan"""
         try:
             headers = {"Authorization": f"Bearer {admin_token}"}
-            response = self.session.put(f"{API_BASE}/admin/users/{user_id}/upgrade?new_plan={new_plan}", 
-                                      headers=headers)
+            # The endpoint expects new_plan as a query parameter
+            response = self.session.put(f"{API_BASE}/admin/users/{user_id}/upgrade", 
+                                      headers=headers, params={"new_plan": new_plan})
             
             if response.status_code == 200:
                 data = response.json()
