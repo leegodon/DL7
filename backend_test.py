@@ -313,10 +313,19 @@ class MK7BackendTester:
         if self.admin_token:
             self.test_admin_settings_get(self.admin_token)
             self.test_admin_settings_update(self.admin_token)
-            self.test_admin_users_list(self.admin_token)
+            users_data = self.test_admin_users_list(self.admin_token)
             
-            # Test user upgrade (if we have users)
-            # This would need actual user IDs from the database
+            # Test user upgrade with testuser
+            if users_data:
+                # Find testuser to upgrade
+                test_user_id = None
+                for user in users_data:
+                    if user.get("email") == "testuser@mk7.com":
+                        test_user_id = user.get("id")
+                        break
+                
+                if test_user_id:
+                    self.test_admin_user_upgrade(self.admin_token, test_user_id, "premium")
         
         # 6. Security tests
         print("\n🔒 Testing Security...")
