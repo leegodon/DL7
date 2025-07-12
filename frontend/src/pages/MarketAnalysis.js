@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { 
   ChartBarIcon, 
-  SparklesIcon, 
-  ClockIcon,
-  ArrowPathIcon,
-  ExclamationTriangleIcon,
-  InformationCircleIcon
+  CpuChipIcon, 
+  CurrencyDollarIcon,
+  ArrowTrendingUpIcon,
+  ArrowTrendingDownIcon,
+  UserGroupIcon,
+  ClockIcon
 } from '@heroicons/react/24/outline';
 import axios from 'axios';
 import toast from 'react-hot-toast';
