@@ -221,7 +221,7 @@ async def analyze_market_with_gemini(request: MarketAnalysisRequest, current_use
             market_context = f"Analyzing {request.symbol} in {request.timeframe} timeframe"
         
         # Create Gemini model
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('gemini-2.5-flash')
         
         # Craft analysis prompt
         prompt = f"""
