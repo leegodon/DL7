@@ -52,7 +52,7 @@ const Dashboard = () => {
     {
       name: 'Today\'s P&L',
       value: isPremium ? '+$421' : '+$52',
-      icon: TrendingUpIcon,
+      icon: ArrowTrendingUpIcon,
       change: '+8.2%',
       changeType: 'positive'
     },
